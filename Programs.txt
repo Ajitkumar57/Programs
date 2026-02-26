@@ -1,71 +1,119 @@
 
+1) Reverse of string using method
+function reverseString(input:string):string {
+    let reversed:string="";
 
-
-//Reverse of String
-function reverseString(str: String) {
-    let reversed = "";
-    for (let i = str.length - 1; i >= 0; i--) {
-        reversed += str[i];
+    for(let i=input.length-1;i>=0;i--){
+        reversed=reversed+input[i];
     }
     return reversed;
 }
-console.log(reverseString("ajitkumar"));
+console.log(reverseString("Ajitkumar"));
 
-//Reverse Number
-function reverseNumber(num: number) {
-    let rev = 0;
-    while (num > 0) {
-        let digit = num % 10;
-        rev = rev * 10 + digit;
-        num = (num - digit) / 10;
+2) Reverse Number
+function revNumber(number:number):number{
+    let revNum:number=0;
+    while(number>0){
+        let digit=number%10;
+        revNum=revNum*10+digit;
+        number=(number-digit)/10;
+    }
+    return revNum;
+}
+console.log(revNumber(12345));
+
+3)Count number of chracters in string
+function countChar(str:string){
+    let count:any={};
+    for(let ch of str ){
+        if(count[ch])
+        count[ch]++;
+        else
+        count[ch]=1;
+    }
+    return count;
+}
+ console.log(countChar("ajita"));
+ 
+ 4) Reverse of array
+ function revArr(arr:any[]):any[]{
+    let rev:any[]=[];
+    let j=0;
+    for(let i=arr.length-1;i>=0;i--){
+        rev[j]=arr[i];
+        j++;
     }
     return rev;
 }
-console.log(reverseNumber(12345))
+console.log(revArr([1,2,3,4,5]));
 
-
-//Number of characters occures in string
-function countAllChars(str:String){
-    let counted="";
-    for(let i=0;i<str.length;i++)
-    {
-    let ch=str[i];
-    if(counted.includes(ch))
-    continue;
-
-    let count=0;
-    for(let j=0;j<str.length;j++)
-    {
-        if(str[j]===ch) count++;
-
+5) Reverse position of words
+function revWord(input:string):string{
+    let word=input.split(" ");
+    let result="";
+    for(let i=word.length-1;i>=0;i--){
+        result=result+ word[i]+" ";
     }
-    console.log(ch+"="+count);
-    counted+=ch;
-}}
-countAllChars("automation");
-
-//last non repating character in String
-function lastNonRepeatingChar(str: string): string | null {
-  for (let i = str.length - 1; i >= 0; i--) {
-    let count = 0;
-
-    // check how many times str[i] appears
-    for (let j = 0; j < str.length; j++) {
-      if (str[i] === str[j]) {
-        count++;
-      }
-    }
-
-    // if only once, return it
-    if (count === 1) {
-      return str[i];
-    }
-  }
-  return null;
+    return result;
+   
 }
+console.log(revWord("I love India"));
 
-// 🔹 Example
-console.log(lastNonRepeatingChar("swiss"));     // Output: "i"
-console.log(lastNonRepeatingChar("developer")); // Output: "v"
-console.log(lastNonRepeatingChar("aabbcc"));    // Output: null
+6) Palindrome string
+function palindrome(pal:string):boolean{
+    let rev:string="";
+    for(let i=pal.length-1;i>=0;i--){
+        rev+=pal[i];
+    }
+    return pal===rev;
+}
+console.log(palindrome("madakdv"));
+console.log(palindrome("madam"));
 
+7) Palindrome number
+function palNum(num:number):boolean{
+    let orig=num.toString();
+    let revNum="";
+    for(let i=orig.length-1;i>=0;i--)
+    {
+        revNum+=orig[i];
+    }
+    return orig===revNum;
+}
+console.log(palNum(121896));
+console.log(palNum(121))
+
+8) Array Max/Min Number
+function arr(a:number[]):{max:number,min:number}{
+    let max=a[0];
+    let min=a[0];
+    for(let i=1;i<a.length;i++)
+    {
+        if(a[i]>max){
+            max=a[i];
+        }
+        if(a[i]<min){
+            min=a[i]
+        }
+    }
+    return {max,min}
+}
+console.log(arr([1,2,3,4,5]))
+
+9) Duplicate removes from string
+function c(str:string):string{
+    let result="";
+    for(let i=0;i<str.length;i++){
+        let duplicate=false;
+        for(let j=0;j<i;j++){
+            if(str[i]==str[j]){
+                duplicate=true;
+                break;
+            }
+        }
+        if(!duplicate)
+        result+=str[i];
+    }
+    return result;
+}
+console.log(c("baca"));
