@@ -117,3 +117,54 @@ function c(str:string):string{
     return result;
 }
 console.log(c("baca"));
+
+10) Even Odd number
+function evenOdd(num:number):string{
+if(num %2==0){
+return "even";
+}
+else
+{
+return "odd"
+}
+}
+console.log(evenOdd(4))
+console.log(evenOdd(7))
+
+11) verify given number is prime or not
+function checkPrime(num:number):string{
+    
+    if(num<=1) {
+        return "not prime";
+    }
+    
+    for(let i=2;i<num;i++){
+        if(num%i==0) {
+        return "not prime";
+    }
+}
+    return "prime";
+}
+console.log(checkPrime(2))
+console.log(checkPrime(3))
+
+12) Prime number of 1 to N number
+function checkPrime(num:number):boolean {
+    
+    if(num<=1) {
+        return false
+    }
+    
+    for(let i=2;i<num;i++){
+        if(num%i==0) {
+        return false
+    }
+}
+    return true
+}
+
+for(let i=1;i<20;i++){
+    if(checkPrime(i)){
+        console.log(i);
+}
+}
