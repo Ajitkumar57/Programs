@@ -168,3 +168,33 @@ for(let i=1;i<20;i++){
         console.log(i);
 }
 }
+
+13) fibonsesi series
+
+function fib(n:number):void {
+    let f=0;
+    let s=1;
+    console.log(f);
+    console.log(s);
+    for(let i=3;i<n;i++){
+        let next=f+s;
+        console.log(next);
+        
+        f=s;
+        s=next;
+    }
+    
+}
+(fib(10))
+
+14) Swap two number without using thrid variable
+let a=5;
+let b=10;
+
+console.log("Before Swap:", +a);
+console.log("Before Swap:", +b);
+a=a+b;
+b=a-b;
+a=a-b;
+console.log("after swap:",+a);
+console.log("after swap:", +b);
