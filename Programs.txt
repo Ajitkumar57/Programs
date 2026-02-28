@@ -198,3 +198,43 @@ b=a-b;
 a=a-b;
 console.log("after swap:",+a);
 console.log("after swap:", +b);
+
+15) Factorial Number
+function fact(num:number):number{
+    let result=1;
+    for(let i=1;i<=num;i++){
+        result=result*i;
+    }
+    
+    return result;
+}
+console.log(fact(5))
+
+16) armstrong number
+function armstrong(num:number){
+    let orig=num;
+    let result=0;
+    while(num>0){
+        let digit=num%10;
+        result=result+(digit*digit*digit);
+        num=(num-digit)/10;
+    }
+    if(result===orig)
+     console.log("armstrong number");
+     else
+     console.log("Not Armstrong");
+}
+armstrong(126);
+armstrong(153);
+
+17) Sum of digits
+function sum(num:number):number{
+    let sum:number=0;
+    while(num>0){
+        let digit=num%10;
+        sum=sum+digit;
+        num=(num-digit)/10;
+    }
+    return sum;
+}
+console.log(sum(12345))
